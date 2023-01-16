@@ -4,7 +4,7 @@ defaultContentLanguage = "en-us"
 title = "Misfortune Alert"
 theme = "animus"
 enableMissingTranslationPlaceholders = true
-copyright = "visit <a href='blah'>plasterbrain.com</a>"
+copyright = "visit <a href='https://plasterbrain.com'>plasterbrain.com</a>"
 
 [params]
 maintenance = true
