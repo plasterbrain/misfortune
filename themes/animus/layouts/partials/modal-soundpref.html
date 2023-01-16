@@ -1,0 +1,20 @@
+
+<div role="presentation" id="modal--black" class="modal--black"></div>
+<div role="presentation" class="modal--positioner" id="modal-soundpref">
+  <div role="dialog" class="modal is-relative" aria-labelledby="modal-soundpref--title">
+    <div class="modal--content" role="presentation" class="is-relative" style="z-index:3;">
+      <h2 id="modal-soundpref--title" class="is-block">
+        {{- i18n "titleSoundPref" -}}
+      </h2>
+      {{- $soundprefClass := "button-modal-soundpref" -}}
+      {{/* @TODO make this not a list, that's annoying i think for SR */}}
+      <ul type="none" class="is-list-flat">
+        <li class="mr-2">{{- partial "button-modal.html" (dict "Name" "play" "Arg" "true" "Class" $soundprefClass) -}}</li>
+        {{- "" -}}
+        <li>{{- partial "button-modal.html" (dict "Name" "mute" "Arg" "false" "Class" $soundprefClass) -}}</li>
+      </ul>
+    </div>
+    <div class="modal--bg has-notches is-absolute" role="presentation">
+    </div>
+  </div>
+</div>

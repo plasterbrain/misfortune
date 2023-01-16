@@ -1,0 +1,10 @@
+[titleSoundPref]
+  other = "Select a sound preference."
+[buttonPlay]
+  other = "Play"
+[buttonPlayFull]
+  other = "Play audio"
+[buttonMute]
+  other = "Mute"
+[buttonMuteFull]
+  other = "Mute audio"

@@ -1,0 +1,9 @@
+<span class="is-block">
+  <span class="project--kind is-font-script">{{ .Get "Kind" }} &mdash;</span>
+  <a href="blah.com">
+    <span class="project--name is-uppercase mr-2">
+      {{- .Get "Name" | safeHTML }} ({{ .Get "Year" -}})
+    </span>
+  </a>
+</span>
+<p class="project--desc">{{ .Get "Desc" }}</p>

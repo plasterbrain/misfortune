@@ -1,0 +1,9 @@
+{{- if not site.Params.maintenance }}
+	{{- $appjs := resources.Get "app.js" -}}
+	{{- with $appjs -}}
+	{{- $js := . | js.Build -}}
+	<script>
+		{{- $js.Content | safeJS -}}
+	</script>
+	{{- end }}
+{{- end }}

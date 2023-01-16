@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us" class="has-modal"><title>Misfortune Alert</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"><body><div role="presentation" class="body--content"><main id="content">
+		<h1 class="has-text-centered"><span class="is-sr-only">Homeu: </span>Coming Soon</h1>
+			</main><footer class="has-text-centered" style="margin:0 auto; width:100%;">
+  <p class="is-font-script">visit <a href='blah'>plasterbrain.com</a></p>
+</footer></div><script>(() => {
+  // <stdin>
+  var soundPrefName = "soundPref";
+  var modalClass = "has-modal";
+  var soundPref = localStorage.getItem(soundPrefName);
+  var $modalSoundPref = document.getElementById("modal-soundpref");
+  var $blackBg = document.getElementById("modal--black");
+  var $buttonToolbarSoundPref = Array.prototype.slice.call(
+    document.querySelectorAll(".button-toolbar-soundpref"),
+    0
+  );
+  var $buttonSoundPref = Array.prototype.slice.call(
+    document.querySelectorAll(".button-modal-soundpref"),
+    0
+  );
+  var $buttonPlay = document.getElementById("button-toolbar-play");
+  var $buttonMute = document.getElementById("button-toolbar-mute");
+  $buttonSoundPref.forEach(function($button) {
+    let arg = $button.getAttribute("data-arg");
+    $button.addEventListener("click", function(e) {
+      localStorage.setItem(soundPrefName, arg);
+      toggleAudio(arg == "true");
+      dismiss($modalSoundPref);
+    });
+  });
+  $buttonToolbarSoundPref.forEach(function($button) {
+    let arg = $button.getAttribute("data-arg");
+    $button.addEventListener("click", function(e) {
+      toggleAudio(arg == "true");
+    });
+  });
+  function toggleAudio(enable) {
+    if (enable) {
+      $buttonPlay.style.display = "none";
+      $buttonMute.style.display = "block";
+    } else {
+      $buttonPlay.style.display = "block";
+      $buttonMute.style.display = "none";
+    }
+  }
+  function dismiss($modal) {
+    if ($modal !== void 0) {
+      $modal.remove();
+    }
+    $blackBg.style.display = "none";
+    document.documentElement.classList.remove(modalClass);
+  }
+})();
+</script></body>
+</html>

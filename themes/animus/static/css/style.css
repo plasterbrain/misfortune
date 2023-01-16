@@ -1,0 +1,324 @@
+:root {
+  --color-eggshell: #B3AC97;
+  --color-ocean: #031119;
+  --color-abyss: #010609;
+  --notch-size: 10px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 24px;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  min-width: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--color-ocean);
+  color: var(--color-eggshell);
+  font-family: Lato, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p,
+ul,
+ol {
+  letter-spacing: +2px;
+  font-weight: 100;
+  font-size: .8em;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: var(--color-eggshell);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: yellow;
+}
+
+main *:not(.is-hero) {
+  max-width: max(55vw, 700px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.is-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+  background: #010609;
+  margin-bottom: 2rem;
+}
+
+.is-sr-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: Musetta;
+  src: url("../fonts/musetta.woff2") format('woff2'),
+    url("../fonts/musetta.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  font-family: "Wolven Script";
+}
+
+h1 {
+  font-size: clamp(1rem, 20vw, 5rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Spaceland Ten";
+  text-transform: uppercase;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  transition-property: color, background;
+  transition-duration: .25s;
+  transition-timing-function: ease-out;
+  color:#B3AC97B3;
+}
+
+.button-modal {
+  background: var(--color-eggshell);
+  font-size: 2.5rem;
+}
+
+.toolbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min-content;
+}
+
+.button-toolbar {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  padding: 0;
+  background: none;
+}
+
+.button-toolbar:hover,
+.button-toolbar:focus {
+  background: #131112;
+  color: var(--color-eggshell);
+}
+
+.has-notches {
+  position: relative;
+}
+
+.has-notches::before {
+  content: " ";
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: var(--color-ocean);
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.has-notches,
+.has-notches::before {
+  overflow: hidden;
+  clip-path: polygon(0% var(--notch-size),
+        var(--notch-size) 0%,
+        calc(100% - var(--notch-size)) 0%,
+        100% var(--notch-size),
+        100% calc(100% - var(--notch-size)),
+        calc(100% - var(--notch-size)) 100%,
+        var(--notch-size) 100%,
+        0% calc(100% - var(--notch-size)));
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.p-2 {
+  padding: .5rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.p-4 {
+  padding: 1.5rem;
+}
+
+.mr-2 {
+  margin-right: .5rem;
+}
+
+.is-list-flat {
+  list-style-type: none;
+  padding: 0;
+}
+
+.is-list-flat li {
+  display: inline;
+}
+
+.modal--black {
+  background: var(--color-abyss);
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal--positioner + .body--content {
+  position: relative;
+  z-index: -99;
+  user-select: none;
+}
+
+.modal {
+  text-align: center;
+  padding: 1rem;
+  width: 60%;
+}
+
+.modal--bg {
+  background: var(--color-eggshell);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  z-index: -1;
+  opacity: .2;
+  top: 0;
+  left: 0;
+}
+
+.modal--bg::before {
+  background: var(--color-ocean);
+}
+
+.modal--positioner {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-serif {
+  font-family: serif;
+}
+
+h2 {
+  padding-left: .5em;
+}
+
+h2 + ul {
+  margin-top: -1.2em;
+}
+
+/* yiiiik! */
+main ul {
+  background-color: var(--color-abyss);
+  padding: 1rem;
+}
+
+main ul li {
+  border-left: 1px solid var(--color-eggshell);
+  padding-left: 1em;
+}
+
+main ul li + li {
+  margin-top: 1rem;
+}
+
+.project--name {
+  font-size: .8em;
+  font-family: serif;
+}
+
+.is-font-script {
+  font-family: "Wolven Script";
+  font-size: .7em;
+  letter-spacing: 1px;
+}
+
+.project--desc {
+  margin: .3em 0;
+  font-size: .7em;
+}
+
+.is-block {
+  display: block;
+}
+
+.toolbar--title {
+  font-size: .5em;
+  margin-bottom: .8rem;
+  text-align: center;
+}

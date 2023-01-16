@@ -1,0 +1,8 @@
+{{- define "main" }}
+	{{- if site.Params.maintenance }}
+		<h1 class="has-text-centered"><span class="is-sr-only">{{ .Title }}: </span>{{- site.Params.maintenanceMsg -}}</h1>
+	{{- else }}
+  	<h1 class="is-sr-only">{{ .Title }}</h1>
+  	{{- .Content | chomp -}}
+	{{- end }}
+{{- end }}

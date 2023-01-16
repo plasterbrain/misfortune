@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" class="has-modal">
+	{{- partial "head.html" . -}}
+	<body>
+		{{- if (site.Params.useAudio) -}}
+			{{ partial "modal-soundpref.html" }}
+		{{- end -}}
+		<div role="presentation" class="body--content">
+			{{- partial "header.html" . -}}
+			<main id="content">
+				{{- if (site.Params.useAudio) -}}
+					<div class="toolbar p-4" role="presentation">
+						<span class="toolbar--title is-block is-uppercase">Tools</span>
+						{{- partial "button-toolbar.html" (dict "Name" "play" "Arg" "true" "Class" "button-toolbar-soundpref button-toolbar-play") -}}
+						{{- partial "button-toolbar.html" (dict "Name" "mute" "Arg" "false" "Class" "button-toolbar-soundpref button-toolbar-mute") -}}
+					</div>
+				{{- end }}
+				{{- block "main" . }}{{- end }}
+			</main>
+			{{- block "afterMain" . }}{{- end }}
+			{{- partial "footer.html" . -}}
+		</div>
+		{{- partial "scripts.html" . -}}
+	</body>
+</html>

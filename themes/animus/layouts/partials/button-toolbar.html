@@ -1,0 +1,8 @@
+{{- $name := index . "Name" }}
+<button class='button-toolbar {{ index . "Class" }}' id="button-toolbar-{{ $name | anchorize }}" data-arg='{{ index . "Arg" }}'>
+  {{- $icon := resources.Get (printf "images/icons/%s.svg" $name) -}}
+  {{- with $icon }}
+    {{- $icon = $icon | resources.ExecuteAsTemplate (printf "%s.svg" $name) . }}
+    {{- $icon.Content | safeHTML -}}
+  {{- end -}}
+</button>

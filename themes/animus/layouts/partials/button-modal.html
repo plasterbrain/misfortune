@@ -1,0 +1,3 @@
+<button class='button-modal {{ index . "Class" | anchorize }} has-notches' id='button-{{ index . "Name" | anchorize }}' data-arg='{{ index . "Arg" }}'>
+  <span style="z-index:1;" class="is-relative p-4" role="presentation">{{ i18n (print "button" (index . "Name" | title)) }}</span>
+</button>
